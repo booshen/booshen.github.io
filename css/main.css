@@ -782,7 +782,7 @@ body {
   width: 700px;
 }
 .headband {
-  height: 3px;
+  height: 28px;
   background: #222;
 }
 .header {
@@ -1055,7 +1055,7 @@ body {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff713b;
+  background: #e9ddff;
 }
 .sidebar-nav {
   margin: 0;
