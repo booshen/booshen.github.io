@@ -166,6 +166,121 @@
           
           
             
+              <a class="post-title-link" href="/2015/08/19/Mac-laravel安装笔记/" itemprop="url">
+                Mac+laravel安装笔记
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-08-19T19:37:37+08:00" content="2015-08-19">
+            2015-08-19
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h2 id="Start">Start</h2><p>不久之前，同事分享过一个主题：史上最牛的PHP框架</p>
+<p>由于我入PHP开发时间尚短，了解的框架也仅仅是接触使用的一两个而已。而且都达不到熟悉的程度。</p>
+<p>所以对其他的PHP框架竟然是一无所知。于是茫茫然的听完分享。</p>
+<p>仅仅是知道了名字叫laravel。</p>
+<p>过了一段时间，我无意间搜索PHP框架，看到了一个排名，让我吃惊的是，laravel的全球排名赫然在榜首的位置，霸气凌然。<br><img src="http://img.ptcms.csdn.net/article/201507/03/55961ff52ac89.jpg" alt="php_framework_ranking"></p>
+<p>于是就动了春心，想一观芳容。于是有了后来的安装，挫折，求助，最终安装成功。</p>
+<p>这不，还没开始研究具体内容呢，就先来上已发热乎的laravel坎坷的安装之路。</p>
+<h2 id="Env">Env</h2><blockquote>
+<p>Mac 10.10.3 + Homebrew</p>
+</blockquote>
+<h2 id="Nginx">Nginx</h2><p>Nginx是个轻量级的HTTP和反向代理服务器，当然也可以搞其他的诸如IMAP、SMTP等。是俄罗斯的一个大牛写的。</p>
+<blockquote>
+<p>nginx的稳定性和低消耗驰名全球。当年的LAMP基本上都成了LNMP了。<br>在高连接并发的情况下，nginx是apache不错的替代品。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install nginx</span><br></pre></td></tr></table></figure>
+<p>这里我先把我的nginx配置贴上来，不过仅能作为一点参考，其他的请大家先自行查找。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen <span class="number">8088</span>;</span><br><span class="line">    server_name localhost;</span><br><span class="line">    root /Users/brian/Codes/php_code/laravel/public/;</span><br><span class="line">    index index.php;</span><br><span class="line"></span><br><span class="line">	//这里是laravel的地址美化，将index.php在url中去掉</span><br><span class="line">    location / &#123;</span><br><span class="line">        try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ /index.php?<span class="variable">$query_string</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#proxy the php scripts to php-fpm</span></span><br><span class="line"></span><br><span class="line">    location ~ \.php$ &#123;</span><br><span class="line">        index index.php;</span><br><span class="line">        include /usr/<span class="built_in">local</span>/etc/nginx/fastcgi.conf;</span><br><span class="line">        fastcgi_intercept_errors on;</span><br><span class="line">        fastcgi_pass <span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">9000</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p><em>NOTICE :</em><em>因为我对nginx的了解也不多，所以这里暂时不多做介绍，回头抽时间研究下nginx的配置，专门来一篇文章入门nginx。</em> <em>敬请期待</em></p>
+<h2 id="MySQL">MySQL</h2><p>mysql的安装，相对来说也简单的多。在Mac上可以直接进行dmg的包安装。省事省心省力。然后下载个图形界面的mysql管理器，一切搞定。</p>
+<p>这里说下brew命令安装的过程</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install mysql</span><br></pre></td></tr></table></figure>
+<p>具体的启动和其他的内容这里就不做介绍了。brew都会一条条的告诉你的！</p>
+<h2 id="PHP56">PHP56</h2><p>因为laravel5.1是个<strong>LTS</strong>(Long Time Support)版本，稳定支持会比较长。laravel5.1对PHP的版本要求是&gt;5.5.9。mac自带了PHP，我的10.10.3的PHP版本是5.5.20，所以能满足laravel的最低要求。所以可以不用再安装php更高版本。</p>
+<p>如果有同学的PHP版本不符合要求，那请看下面的brew命令。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install homebrew/php/php56</span><br></pre></td></tr></table></figure>
+<p><em>注 :</em> 这里的php56安装后，好像会覆盖掉Mac的php版本，没有仔细深究。大家可以刨根问底下。</p>
+<h2 id="Composer">Composer</h2><p>composer是个PHP的依赖管理器。一开始我也不知道是个啥东西，后来才知道这个依赖管理器对于PHP开发者来说简直就是个神器啊。她就相当于是终结者中的YellowBook(电话号码记录本)，用来管理PHP的各种依赖。你告诉composer你想找哪个依赖包，composer就能告诉你这个依赖的家庭地址。再也不用无头苍蝇的去google了。</p>
+<blockquote>
+<p><em>但是让人失望的是，composer大多数的镜像都被无情的封锁了。最近有几个国内镜像站，大家可以去搜一下。</em></p>
+</blockquote>
+<p><strong>Mac</strong>下安装composer很简单啦。非Mac用户本博客暂时不提供支持了，因为一入Mac深似海，此生码农不转Win。say sorry了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install composer</span><br></pre></td></tr></table></figure>
+<p><strong>注</strong> 其实composer就是个可执行的二进制文件，Linux的同学，可以直接下载个composer.phar，然后将~/.bash_profile的PATH更新下，记得source下生效。就可以用啦</p>
+<h2 id="laravel">laravel</h2><p><strong>Notice：</strong>这里介绍的是非常规途径，但是是最基础的方式。因为我的机器用下面那个常规途径不成功，只好用这个非常规途径了。大家可以先看下面的那个，如果不行了，再来这里。其实都是一样的。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer install create-project laravel/laravel_project <span class="comment">#如果想压缩安装，后面添加 --prefer-dist</span></span><br></pre></td></tr></table></figure>
+<p>安装laravel必不可少的一项就是更改下面这两个文件夹的权限问题。因为系统要进行一些写操作。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod -R <span class="number">777</span> storage</span><br><span class="line">chmod -R <span class="number">777</span> vendor</span><br></pre></td></tr></table></figure>
+<p><strong>Notice :</strong>其实正规途径是这样的：</p>
+<ul>
+<li>先通过composer安装laravel</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer global require <span class="string">"laravel/installer=~1.1"</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>再通过laravel来新建项目</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">laravel new laravel_project</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>新建项目之后不要忘了更改storage和vendor的权限</p>
+</li>
+<li><p>之前的那个非常规途径其实是通过了composer直接来安装</p>
+</li>
+</ul>
+<h2 id="End">End</h2><p>作为墙里边的墙角下的人（ITer），总是能时时刻刻感受到墙的存在。相比于其他行业的不知情者，多了许多对墙外世界的神往，听了许多墙那边自由的风声，也白白多了许多烦恼和愤慨。希望大家有能力还是翻出去看看！毕竟，自由是任何东西都无法换来的。</p>
+<p><strong>For Freedom!</strong></p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/08/19/Mac10-10-3-Hexo-Git部署静态博客/" itemprop="url">
                 Mac10.10.3+Hexo+Git部署静态博客
               </a>
@@ -396,7 +511,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -410,7 +525,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

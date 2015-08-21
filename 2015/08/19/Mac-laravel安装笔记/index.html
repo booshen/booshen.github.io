@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="Git,Hexo,Mac10.10.3," />
+  <meta name="keywords" content="composer,laravel,php56," />
 
 
 
@@ -37,22 +37,32 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="Ice Break1Its been a long time, my friends.
-从2009年接触博客，到后来的一度中断，到现在的想记录下来一部分属于自己的文字。由于静态博客的流行，所以想到了最近大热的Hexo，让人兴奋的是，git可以免费托管访问。这是让我最为欣赏的。本来还想着要不要搞个个人域名，好歹做做样子，不过最终看到个人域名的价格，还是作罢。继续支持Git！
-Start第一篇就用来记">
+<meta name="description" content="Start不久之前，同事分享过一个主题：史上最牛的PHP框架
+由于我入PHP开发时间尚短，了解的框架也仅仅是接触使用的一两个而已。而且都达不到熟悉的程度。
+所以对其他的PHP框架竟然是一无所知。于是茫茫然的听完分享。
+仅仅是知道了名字叫laravel。
+过了一段时间，我无意间搜索PHP框架，看到了一个排名，让我吃惊的是，laravel的全球排名赫然在榜首的位置，霸气凌然。
+于是就动了春心，想一观芳">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mac10.10.3+Hexo+Git部署静态博客">
-<meta property="og:url" content="http://booshen.github.io/2015/08/19/Mac10-10-3-Hexo-Git部署静态博客/index.html">
+<meta property="og:title" content="Mac+laravel安装笔记">
+<meta property="og:url" content="http://booshen.github.io/2015/08/19/Mac-laravel安装笔记/index.html">
 <meta property="og:site_name" content="Booshen">
-<meta property="og:description" content="Ice Break1Its been a long time, my friends.
-从2009年接触博客，到后来的一度中断，到现在的想记录下来一部分属于自己的文字。由于静态博客的流行，所以想到了最近大热的Hexo，让人兴奋的是，git可以免费托管访问。这是让我最为欣赏的。本来还想着要不要搞个个人域名，好歹做做样子，不过最终看到个人域名的价格，还是作罢。继续支持Git！
-Start第一篇就用来记">
-<meta property="og:updated_time" content="2015-08-19T09:27:55.000Z">
+<meta property="og:description" content="Start不久之前，同事分享过一个主题：史上最牛的PHP框架
+由于我入PHP开发时间尚短，了解的框架也仅仅是接触使用的一两个而已。而且都达不到熟悉的程度。
+所以对其他的PHP框架竟然是一无所知。于是茫茫然的听完分享。
+仅仅是知道了名字叫laravel。
+过了一段时间，我无意间搜索PHP框架，看到了一个排名，让我吃惊的是，laravel的全球排名赫然在榜首的位置，霸气凌然。
+于是就动了春心，想一观芳">
+<meta property="og:image" content="http://img.ptcms.csdn.net/article/201507/03/55961ff52ac89.jpg">
+<meta property="og:updated_time" content="2015-08-21T02:06:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mac10.10.3+Hexo+Git部署静态博客">
-<meta name="twitter:description" content="Ice Break1Its been a long time, my friends.
-从2009年接触博客，到后来的一度中断，到现在的想记录下来一部分属于自己的文字。由于静态博客的流行，所以想到了最近大热的Hexo，让人兴奋的是，git可以免费托管访问。这是让我最为欣赏的。本来还想着要不要搞个个人域名，好歹做做样子，不过最终看到个人域名的价格，还是作罢。继续支持Git！
-Start第一篇就用来记">
+<meta name="twitter:title" content="Mac+laravel安装笔记">
+<meta name="twitter:description" content="Start不久之前，同事分享过一个主题：史上最牛的PHP框架
+由于我入PHP开发时间尚短，了解的框架也仅仅是接触使用的一两个而已。而且都达不到熟悉的程度。
+所以对其他的PHP框架竟然是一无所知。于是茫茫然的听完分享。
+仅仅是知道了名字叫laravel。
+过了一段时间，我无意间搜索PHP框架，看到了一个排名，让我吃惊的是，laravel的全球排名赫然在榜首的位置，霸气凌然。
+于是就动了春心，想一观芳">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -62,7 +72,7 @@ Start第一篇就用来记">
   };
 </script>
 
-  <title> Mac10.10.3+Hexo+Git部署静态博客 | Booshen </title>
+  <title> Mac+laravel安装笔记 | Booshen </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -171,7 +181,7 @@ Start第一篇就用来记">
           
           
             
-              Mac10.10.3+Hexo+Git部署静态博客
+              Mac+laravel安装笔记
             
           
         </h1>
@@ -180,7 +190,7 @@ Start第一篇就用来记">
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-08-19T12:01:54+08:00" content="2015-08-19">
+          <time itemprop="dateCreated" datetime="2015-08-19T19:37:37+08:00" content="2015-08-19">
             2015-08-19
           </time>
         </span>
@@ -199,82 +209,60 @@ Start第一篇就用来记">
       
 
       
-        <span itemprop="articleBody"><h2 id="Ice_Break">Ice Break</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Its been a long time, my friends.</span><br></pre></td></tr></table></figure>
-<p>从2009年接触博客，到后来的一度中断，到现在的想记录下来一部分属于自己的文字。<br>由于静态博客的流行，所以想到了最近大热的Hexo，让人兴奋的是，git可以免费托管访问。这是让我最为欣赏的。<br>本来还想着要不要搞个个人域名，好歹做做样子，不过最终看到个人域名的价格，还是作罢。继续支持Git！</p>
-<h2 id="Start">Start</h2><p>第一篇就用来记录Mac上如何部署Hexo，以及如何托管到Git上的。<br>人老了，记不住哇，所以还是写下来比较好一些。。。</p>
-<h2 id="Procedure">Procedure</h2><h3 id="Mac">Mac</h3><blockquote>
-<p>环境：RMBP 10.10.3， Homebrew</p>
+        <span itemprop="articleBody"><h2 id="Start">Start</h2><p>不久之前，同事分享过一个主题：史上最牛的PHP框架</p>
+<p>由于我入PHP开发时间尚短，了解的框架也仅仅是接触使用的一两个而已。而且都达不到熟悉的程度。</p>
+<p>所以对其他的PHP框架竟然是一无所知。于是茫茫然的听完分享。</p>
+<p>仅仅是知道了名字叫laravel。</p>
+<p>过了一段时间，我无意间搜索PHP框架，看到了一个排名，让我吃惊的是，laravel的全球排名赫然在榜首的位置，霸气凌然。<br><img src="http://img.ptcms.csdn.net/article/201507/03/55961ff52ac89.jpg" alt="php_framework_ranking"></p>
+<p>于是就动了春心，想一观芳容。于是有了后来的安装，挫折，求助，最终安装成功。</p>
+<p>这不，还没开始研究具体内容呢，就先来上已发热乎的laravel坎坷的安装之路。</p>
+<h2 id="Env">Env</h2><blockquote>
+<p>Mac 10.10.3 + Homebrew</p>
 </blockquote>
-<p>Homebrew相信Mac下的小伙伴都不舍得错过，这里不多讲，安装也非常简单。</p>
-<h3 id="Node">Node</h3><p>Hexo是基于Node的，所以要将Node安装上啦。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure>
-<h3 id="Hexo">Hexo</h3><p>这里就是安装hexo啦。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure>
-<p>初始化一个hexo的项目，name位hexo_blog</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init hexo_blog</span><br></pre></td></tr></table></figure>
-<p>初始化配置完成后，进行安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> hexo_blog</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<p>通过hexo进行HelloWorld的生成</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
-<p>将hexo跑起来</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-<p>上去看一下吧</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:<span class="number">4000</span></span><br></pre></td></tr></table></figure>
-<h3 id="Git">Git</h3><p>这里git通过brew安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install git</span><br></pre></td></tr></table></figure>
-<p>安装完了git，要将SSH Key进行和github的绑定。</p>
+<h2 id="Nginx">Nginx</h2><p>Nginx是个轻量级的HTTP和反向代理服务器，当然也可以搞其他的诸如IMAP、SMTP等。是俄罗斯的一个大牛写的。</p>
+<blockquote>
+<p>nginx的稳定性和低消耗驰名全球。当年的LAMP基本上都成了LNMP了。<br>在高连接并发的情况下，nginx是apache不错的替代品。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install nginx</span><br></pre></td></tr></table></figure>
+<p>这里我先把我的nginx配置贴上来，不过仅能作为一点参考，其他的请大家先自行查找。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen <span class="number">8088</span>;</span><br><span class="line">    server_name localhost;</span><br><span class="line">    root /Users/brian/Codes/php_code/laravel/public/;</span><br><span class="line">    index index.php;</span><br><span class="line"></span><br><span class="line">	//这里是laravel的地址美化，将index.php在url中去掉</span><br><span class="line">    location / &#123;</span><br><span class="line">        try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ /index.php?<span class="variable">$query_string</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#proxy the php scripts to php-fpm</span></span><br><span class="line"></span><br><span class="line">    location ~ \.php$ &#123;</span><br><span class="line">        index index.php;</span><br><span class="line">        include /usr/<span class="built_in">local</span>/etc/nginx/fastcgi.conf;</span><br><span class="line">        fastcgi_intercept_errors on;</span><br><span class="line">        fastcgi_pass <span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">9000</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p><em>NOTICE :</em><em>因为我对nginx的了解也不多，所以这里暂时不多做介绍，回头抽时间研究下nginx的配置，专门来一篇文章入门nginx。</em> <em>敬请期待</em></p>
+<h2 id="MySQL">MySQL</h2><p>mysql的安装，相对来说也简单的多。在Mac上可以直接进行dmg的包安装。省事省心省力。然后下载个图形界面的mysql管理器，一切搞定。</p>
+<p>这里说下brew命令安装的过程</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install mysql</span><br></pre></td></tr></table></figure>
+<p>具体的启动和其他的内容这里就不做介绍了。brew都会一条条的告诉你的！</p>
+<h2 id="PHP56">PHP56</h2><p>因为laravel5.1是个<strong>LTS</strong>(Long Time Support)版本，稳定支持会比较长。laravel5.1对PHP的版本要求是&gt;5.5.9。mac自带了PHP，我的10.10.3的PHP版本是5.5.20，所以能满足laravel的最低要求。所以可以不用再安装php更高版本。</p>
+<p>如果有同学的PHP版本不符合要求，那请看下面的brew命令。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install homebrew/php/php56</span><br></pre></td></tr></table></figure>
+<p><em>注 :</em> 这里的php56安装后，好像会覆盖掉Mac的php版本，没有仔细深究。大家可以刨根问底下。</p>
+<h2 id="Composer">Composer</h2><p>composer是个PHP的依赖管理器。一开始我也不知道是个啥东西，后来才知道这个依赖管理器对于PHP开发者来说简直就是个神器啊。她就相当于是终结者中的YellowBook(电话号码记录本)，用来管理PHP的各种依赖。你告诉composer你想找哪个依赖包，composer就能告诉你这个依赖的家庭地址。再也不用无头苍蝇的去google了。</p>
+<blockquote>
+<p><em>但是让人失望的是，composer大多数的镜像都被无情的封锁了。最近有几个国内镜像站，大家可以去搜一下。</em></p>
+</blockquote>
+<p><strong>Mac</strong>下安装composer很简单啦。非Mac用户本博客暂时不提供支持了，因为一入Mac深似海，此生码农不转Win。say sorry了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install composer</span><br></pre></td></tr></table></figure>
+<p><strong>注</strong> 其实composer就是个可执行的二进制文件，Linux的同学，可以直接下载个composer.phar，然后将~/.bash_profile的PATH更新下，记得source下生效。就可以用啦</p>
+<h2 id="laravel">laravel</h2><p><strong>Notice：</strong>这里介绍的是非常规途径，但是是最基础的方式。因为我的机器用下面那个常规途径不成功，只好用这个非常规途径了。大家可以先看下面的那个，如果不行了，再来这里。其实都是一样的。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer install create-project laravel/laravel_project <span class="comment">#如果想压缩安装，后面添加 --prefer-dist</span></span><br></pre></td></tr></table></figure>
+<p>安装laravel必不可少的一项就是更改下面这两个文件夹的权限问题。因为系统要进行一些写操作。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod -R <span class="number">777</span> storage</span><br><span class="line">chmod -R <span class="number">777</span> vendor</span><br></pre></td></tr></table></figure>
+<p><strong>Notice :</strong>其实正规途径是这样的：</p>
 <ul>
-<li>检查SSH Key</li>
+<li>先通过composer安装laravel</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.ssh</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer global require <span class="string">"laravel/installer=~1.1"</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li>备份已有Key(没有可以忽略)</li>
+<li>再通过laravel来新建项目</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p key_bak</span><br><span class="line">mv id_rsa* key_bak</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">laravel new laravel_project</span><br></pre></td></tr></table></figure>
 <ul>
-<li>生成新Key</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"gitusername@github.com"</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>将新Key添加到github上</li>
-</ul>
-<p>登录Github，Settings -&gt; SSH keys -&gt; Add SSH key</p>
-<p>将你的新生成的id_rsa.pub文件中的key复制过来。保存</p>
-<ul>
-<li>测试Key的有效性</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh git@github.com</span><br></pre></td></tr></table></figure>
-<p>如果出现了一些连接成功，并且说github不支持ssh的方式，那说明Ok了</p>
-<ul>
-<li>设置个人访问信息</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"githubusername"</span></span><br><span class="line">git config --global user.email <span class="string">"xxx@xxx.com"</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>登录github，新建名为xxxx.github.io的repository,待会修改hexo的git推送配置的时候使用</p>
+<li><p>新建项目之后不要忘了更改storage和vendor的权限</p>
 </li>
-<li><p>修改hexo的git配置，方便将hexo的内容推送到git上，由git papa托管啦就。修改hexo_blog/_config.yml</p>
+<li><p>之前的那个非常规途径其实是通过了composer直接来安装</p>
 </li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">	<span class="built_in">type</span>: github</span><br><span class="line">	repository: git@github.com:gitusername/xxxx.github.io</span><br><span class="line">	branch: master</span><br></pre></td></tr></table></figure>
-<h2 id="Send_To_Git">Send To Git</h2><p>重新编译更新的文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure></p>
-<p>将hexo_blog的内容推送到git上去</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-<p>貌似有点慢，shell中结束后，git老爹还要一会反应时间。</p>
-<p>如果git上的repository更新了，那你就可以通过xxxx.github.io来进行访问了。</p>
-<h2 id="主题更换">主题更换</h2><p>hexo的主题也非常多啦，自己找一个喜欢的来吧。我选的next，觉得挺好。Rank No.1哦。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> hexo_blog/themes/</span><br></pre></td></tr></table></figure>
-<p>克隆主题到themes文件夹下</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next.git next/</span><br></pre></td></tr></table></figure>
-<p>更改hexo_blog/_config.yml字段，更换博客主题为next</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-<p>重新编译下</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g <span class="comment">#generate的缩写</span></span><br></pre></td></tr></table></figure>
-<p>看看效果如何</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s <span class="comment">#server的缩写</span></span><br></pre></td></tr></table></figure>
-<p>让git帮你推广到全世界。前提你的文章foreigner能看懂哈。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-<h2 id="End">End</h2><p>其他的暂时没有了吧。如果有遗漏想起来会更新的。<br>另外，这个next主题很强大，有自己的文档，它的<a href="https://github.com/iissnan/hexo-theme-next.git" target="_blank" rel="external">git</a>上有文档地址。<br>find it by yourself, and enjoy it</p>
+<h2 id="End">End</h2><p>作为墙里边的墙角下的人（ITer），总是能时时刻刻感受到墙的存在。相比于其他行业的不知情者，多了许多对墙外世界的神往，听了许多墙那边自由的风声，也白白多了许多烦恼和愤慨。希望大家有能力还是翻出去看看！毕竟，自由是任何东西都无法换来的。</p>
+<p><strong>For Freedom!</strong></p>
 </span>
       
     </div>
@@ -283,11 +271,11 @@ Start第一篇就用来记">
       
         <div class="post-tags">
           
-            <a href="/tags/Git/" rel="tag">#Git</a>
+            <a href="/tags/composer/" rel="tag">#composer</a>
           
-            <a href="/tags/Hexo/" rel="tag">#Hexo</a>
+            <a href="/tags/laravel/" rel="tag">#laravel</a>
           
-            <a href="/tags/Mac10-10-3/" rel="tag">#Mac10.10.3</a>
+            <a href="/tags/php56/" rel="tag">#php56</a>
           
         </div>
       
@@ -296,13 +284,11 @@ Start第一篇就用来记">
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/08/19/Mac-laravel安装笔记/" rel="prev">Mac+laravel安装笔记</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/18/hello-world/" rel="next">Hello World</a>
+              <a href="/2015/08/19/Mac10-10-3-Hexo-Git部署静态博客/" rel="next">Mac10.10.3+Hexo+Git部署静态博客</a>
             
           </div>
         </div>
@@ -416,7 +402,7 @@ Start第一篇就用来记">
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ice_Break"><span class="nav-number">1.</span> <span class="nav-text">Ice Break</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Start"><span class="nav-number">2.</span> <span class="nav-text">Start</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Procedure"><span class="nav-number">3.</span> <span class="nav-text">Procedure</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mac"><span class="nav-number">3.1.</span> <span class="nav-text">Mac</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Node"><span class="nav-number">3.2.</span> <span class="nav-text">Node</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo"><span class="nav-number">3.3.</span> <span class="nav-text">Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git"><span class="nav-number">3.4.</span> <span class="nav-text">Git</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Send_To_Git"><span class="nav-number">4.</span> <span class="nav-text">Send To Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题更换"><span class="nav-number">5.</span> <span class="nav-text">主题更换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#End"><span class="nav-number">6.</span> <span class="nav-text">End</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Start"><span class="nav-number">1.</span> <span class="nav-text">Start</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Env"><span class="nav-number">2.</span> <span class="nav-text">Env</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx"><span class="nav-number">3.</span> <span class="nav-text">Nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL"><span class="nav-number">4.</span> <span class="nav-text">MySQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP56"><span class="nav-number">5.</span> <span class="nav-text">PHP56</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Composer"><span class="nav-number">6.</span> <span class="nav-text">Composer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#laravel"><span class="nav-number">7.</span> <span class="nav-text">laravel</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#End"><span class="nav-number">8.</span> <span class="nav-text">End</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
