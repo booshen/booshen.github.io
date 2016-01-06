@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="Git,Hexo,Mac10.10.3," />
+  <meta name="keywords" content="Hexo,next" />
 
 
 
@@ -37,22 +37,52 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="Ice Break1Its been a long time, my friends.
-从2009年接触博客，到后来的一度中断，到现在的想记录下来一部分属于自己的文字。由于静态博客的流行，所以想到了最近大热的Hexo，让人兴奋的是，git可以免费托管访问。这是让我最为欣赏的。本来还想着要不要搞个个人域名，好歹做做样子，不过最终看到个人域名的价格，还是作罢。继续支持Git！
-Start第一篇就用来记">
+<meta name="description" content="需求公司开发的时候也大多都是gitlab了，简洁方便。
+但是自己的github也要使用，就会遇到多个git帐号配置的事情。
+
+王阳明说：圣人为镜，物来则照。
+
+遇到了就记录下来。方便自己，也希望能帮助他人。
+开始环境：
+
+Mac 10.11.2
+
+其实也就是生成多个ssh-key，然后让多个ssh-key同时生效即可。
+第一个ssh-key生成：
+1234567891011121314151617">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mac10.10.3+Hexo+Git部署静态博客">
-<meta property="og:url" content="http://booshen.github.io/2015/08/19/Mac10-10-3-Hexo-Git部署静态博客/index.html">
+<meta property="og:title" content="Mac下配置多个git帐号">
+<meta property="og:url" content="http://booshen.github.io/2016/01/06/Mac下配置多个git帐号/index.html">
 <meta property="og:site_name" content="Booshen">
-<meta property="og:description" content="Ice Break1Its been a long time, my friends.
-从2009年接触博客，到后来的一度中断，到现在的想记录下来一部分属于自己的文字。由于静态博客的流行，所以想到了最近大热的Hexo，让人兴奋的是，git可以免费托管访问。这是让我最为欣赏的。本来还想着要不要搞个个人域名，好歹做做样子，不过最终看到个人域名的价格，还是作罢。继续支持Git！
-Start第一篇就用来记">
-<meta property="og:updated_time" content="2015-08-19T09:27:55.000Z">
+<meta property="og:description" content="需求公司开发的时候也大多都是gitlab了，简洁方便。
+但是自己的github也要使用，就会遇到多个git帐号配置的事情。
+
+王阳明说：圣人为镜，物来则照。
+
+遇到了就记录下来。方便自己，也希望能帮助他人。
+开始环境：
+
+Mac 10.11.2
+
+其实也就是生成多个ssh-key，然后让多个ssh-key同时生效即可。
+第一个ssh-key生成：
+1234567891011121314151617">
+<meta property="og:updated_time" content="2016-01-06T02:48:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mac10.10.3+Hexo+Git部署静态博客">
-<meta name="twitter:description" content="Ice Break1Its been a long time, my friends.
-从2009年接触博客，到后来的一度中断，到现在的想记录下来一部分属于自己的文字。由于静态博客的流行，所以想到了最近大热的Hexo，让人兴奋的是，git可以免费托管访问。这是让我最为欣赏的。本来还想着要不要搞个个人域名，好歹做做样子，不过最终看到个人域名的价格，还是作罢。继续支持Git！
-Start第一篇就用来记">
+<meta name="twitter:title" content="Mac下配置多个git帐号">
+<meta name="twitter:description" content="需求公司开发的时候也大多都是gitlab了，简洁方便。
+但是自己的github也要使用，就会遇到多个git帐号配置的事情。
+
+王阳明说：圣人为镜，物来则照。
+
+遇到了就记录下来。方便自己，也希望能帮助他人。
+开始环境：
+
+Mac 10.11.2
+
+其实也就是生成多个ssh-key，然后让多个ssh-key同时生效即可。
+第一个ssh-key生成：
+1234567891011121314151617">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -62,7 +92,7 @@ Start第一篇就用来记">
   };
 </script>
 
-  <title> Mac10.10.3+Hexo+Git部署静态博客 | Booshen </title>
+  <title> Mac下配置多个git帐号 | Booshen </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -198,7 +228,7 @@ Start第一篇就用来记">
           
           
             
-              Mac10.10.3+Hexo+Git部署静态博客
+              Mac下配置多个git帐号
             
           
         </h1>
@@ -207,8 +237,8 @@ Start第一篇就用来记">
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-08-19T12:01:54+08:00" content="2015-08-19">
-            2015-08-19
+          <time itemprop="dateCreated" datetime="2016-01-06T10:11:12+08:00" content="2016-01-06">
+            2016-01-06
           </time>
         </span>
 
@@ -218,8 +248,8 @@ Start第一篇就用来记">
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/08/19/Mac10-10-3-Hexo-Git部署静态博客/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/19/Mac10-10-3-Hexo-Git部署静态博客/" itemprop="commentsCount"></span>
+              <a href="/2016/01/06/Mac下配置多个git帐号/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/06/Mac下配置多个git帐号/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -233,110 +263,54 @@ Start第一篇就用来记">
       
 
       
-        <span itemprop="articleBody"><h2 id="Ice_Break">Ice Break</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Its been a long time, my friends.</span><br></pre></td></tr></table></figure>
-<p>从2009年接触博客，到后来的一度中断，到现在的想记录下来一部分属于自己的文字。<br>由于静态博客的流行，所以想到了最近大热的Hexo，让人兴奋的是，git可以免费托管访问。这是让我最为欣赏的。<br>本来还想着要不要搞个个人域名，好歹做做样子，不过最终看到个人域名的价格，还是作罢。继续支持Git！</p>
-<h2 id="Start">Start</h2><p>第一篇就用来记录Mac上如何部署Hexo，以及如何托管到Git上的。<br>人老了，记不住哇，所以还是写下来比较好一些。。。</p>
-<h2 id="Procedure">Procedure</h2><h3 id="Mac">Mac</h3><blockquote>
-<p>环境：RMBP 10.10.3， Homebrew</p>
+        <span itemprop="articleBody"><h2 id="需求">需求</h2><p>公司开发的时候也大多都是gitlab了，简洁方便。</p>
+<p>但是自己的github也要使用，就会遇到多个git帐号配置的事情。</p>
+<blockquote>
+<p>王阳明说：圣人为镜，物来则照。</p>
 </blockquote>
-<p>Homebrew相信Mac下的小伙伴都不舍得错过，这里不多讲，安装也非常简单。</p>
-<h3 id="Node">Node</h3><p>Hexo是基于Node的，所以要将Node安装上啦。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure>
-<h3 id="Hexo">Hexo</h3><p>这里就是安装hexo啦。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure>
-<p>初始化一个hexo的项目，name位hexo_blog</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init hexo_blog</span><br></pre></td></tr></table></figure>
-<p>初始化配置完成后，进行安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> hexo_blog</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<p>通过hexo进行HelloWorld的生成</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
-<p>将hexo跑起来</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-<p>上去看一下吧</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:<span class="number">4000</span></span><br></pre></td></tr></table></figure>
-<h3 id="Git">Git</h3><p>这里git通过brew安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install git</span><br></pre></td></tr></table></figure>
-<p>安装完了git，要将SSH Key进行和github的绑定。</p>
-<ul>
-<li>检查SSH Key</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.ssh</span><br></pre></td></tr></table></figure>
-<ul>
-<li>备份已有Key(没有可以忽略)</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p key_bak</span><br><span class="line">mv id_rsa* key_bak</span><br></pre></td></tr></table></figure>
-<ul>
-<li>生成新Key</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"gitusername@github.com"</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>将新Key添加到github上</li>
-</ul>
-<p>登录Github，Settings -&gt; SSH keys -&gt; Add SSH key</p>
-<p>将你的新生成的id_rsa.pub文件中的key复制过来。保存</p>
-<ul>
-<li>测试Key的有效性</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh git@github.com</span><br></pre></td></tr></table></figure>
-<p>如果出现了一些连接成功，并且说github不支持ssh的方式，那说明Ok了</p>
-<ul>
-<li>设置个人访问信息</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"githubusername"</span></span><br><span class="line">git config --global user.email <span class="string">"xxx@xxx.com"</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>登录github，新建名为xxxx.github.io的repository,待会修改hexo的git推送配置的时候使用</p>
-</li>
-<li><p>修改hexo的git配置，方便将hexo的内容推送到git上，由git papa托管啦就。修改hexo_blog/_config.yml</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">	<span class="built_in">type</span>: github</span><br><span class="line">	repository: git@github.com:gitusername/xxxx.github.io</span><br><span class="line">	branch: master</span><br></pre></td></tr></table></figure>
-<h2 id="Send_To_Git">Send To Git</h2><p>重新编译更新的文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure></p>
-<p>将hexo_blog的内容推送到git上去</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-<p>貌似有点慢，shell中结束后，git老爹还要一会反应时间。</p>
-<p>如果git上的repository更新了，那你就可以通过xxxx.github.io来进行访问了。</p>
-<h2 id="主题更换">主题更换</h2><p>hexo的主题也非常多啦，自己找一个喜欢的来吧。我选的next，觉得挺好。Rank No.1哦。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> hexo_blog/themes/</span><br></pre></td></tr></table></figure>
-<p>克隆主题到themes文件夹下</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next.git next/</span><br></pre></td></tr></table></figure>
-<p>更改hexo_blog/_config.yml字段，更换博客主题为next</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-<p>重新编译下</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g <span class="comment">#generate的缩写</span></span><br></pre></td></tr></table></figure>
-<p>看看效果如何</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s <span class="comment">#server的缩写</span></span><br></pre></td></tr></table></figure>
-<p>让git帮你推广到全世界。前提你的文章foreigner能看懂哈。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-<h2 id="End">End</h2><p>其他的暂时没有了吧。如果有遗漏想起来会更新的。<br>另外，这个next主题很强大，有自己的文档，它的<a href="https://github.com/iissnan/hexo-theme-next.git" target="_blank" rel="external">git</a>上有文档地址。<br>find it by yourself, and enjoy it</p>
+<p>遇到了就记录下来。方便自己，也希望能帮助他人。</p>
+<h2 id="开始">开始</h2><p>环境：</p>
+<blockquote>
+<p>Mac 10.11.2</p>
+</blockquote>
+<p>其实也就是生成多个ssh-key，然后让多个ssh-key同时生效即可。</p>
+<p>第一个ssh-key生成：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"username@gitlab.com"</span></span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/Users/xxx/.ssh/id_rsa):</span><br><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):</span><br><span class="line">Enter same passphrase again:</span><br><span class="line">Your identification has been saved <span class="keyword">in</span> /Users/xxx/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /Users/xxx/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">SHA256:****************************** xxx@gitlab.com</span><br><span class="line">The key<span class="string">'s randomart image is:</span><br><span class="line">+---[RSA 2048]----+</span><br><span class="line">|                 |</span><br><span class="line">|         *       |</span><br><span class="line">|        . o      |</span><br><span class="line">|         .  .    |</span><br><span class="line">|         a       |</span><br><span class="line">|           .     |</span><br><span class="line">|            +    |</span><br><span class="line">|           .     |</span><br><span class="line">|                 |</span><br><span class="line">+----[SHA256]-----+</span></span><br></pre></td></tr></table></figure>
+<p>一路回车即可搞定第一个，默认就会写到下面这个文件中。</p>
+<blockquote>
+<p>~/.ssh/is_rsa.pub</p>
+</blockquote>
+<p>第二个ssh-key生成：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"username@github.com"</span></span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/Users/xxx/.ssh/id_rsa): /Users/xxx/.ssh/id_rsa_github</span><br><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):</span><br><span class="line">Enter same passphrase again:</span><br><span class="line">Your identification has been saved <span class="keyword">in</span> /Users/xxx/.ssh/id_rsa_github.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /Users/xxx/.ssh/id_rsa_github.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">SHA256:******************************* xxx@github.com</span><br><span class="line">The key<span class="string">'s randomart image is:</span><br><span class="line">+---[RSA 2048]----+</span><br><span class="line">|        +        |</span><br><span class="line">|                 |</span><br><span class="line">|        . o      |</span><br><span class="line">|         .       |</span><br><span class="line">|        S        |</span><br><span class="line">|           .     |</span><br><span class="line">|            +    |</span><br><span class="line">|           .     |</span><br><span class="line">|            +    |</span><br><span class="line">+----[SHA256]-----+</span></span><br></pre></td></tr></table></figure>
+<p>第二个在生成的时候，只是输入了这个key需要保存的文件名。如果不写，就会默认询问是否覆盖第一个生成的rsa文件。</p>
+<p>在第二个文件生成好以后，需要将这个key添加给系统的ssh，这样系统才能识别。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-add /Users/xxx/.ssh/id_rsa_github</span><br></pre></td></tr></table></figure>
+<p>此时添加第二个key结束。来验证下吧。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>如果出现</p>
+<blockquote>
+<p>Hi lizhong! You’ve successfully authenticated…</p>
+</blockquote>
+<p>则说明已经可以成功连接到github了。</p>
+<h2 id="End">End</h2><blockquote>
+<p>The End!</p>
+</blockquote>
 </span>
       
     </div>
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Git/" rel="tag">#Git</a>
-          
-            <a href="/tags/Hexo/" rel="tag">#Hexo</a>
-          
-            <a href="/tags/Mac10-10-3/" rel="tag">#Mac10.10.3</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/08/19/Mac-laravel安装笔记/" rel="prev">Mac+laravel安装笔记</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/18/hello-world/" rel="next">Hello World</a>
+              <a href="/2016/01/06/CentOS安装PHP的PDO扩展/" rel="next">CentOS安装PHP的PDO扩展</a>
             
           </div>
         </div>
@@ -351,10 +325,10 @@ Start第一篇就用来记">
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/08/19/Mac10-10-3-Hexo-Git部署静态博客/"
-     data-title="Mac10.10.3+Hexo+Git部署静态博客"
+        <div class="ds-share flat" data-thread-key="2016/01/06/Mac下配置多个git帐号/"
+     data-title="Mac下配置多个git帐号"
      data-content=""
-     data-url="http://booshen.github.io/2015/08/19/Mac10-10-3-Hexo-Git部署静态博客/">
+     data-url="http://booshen.github.io/2016/01/06/Mac下配置多个git帐号/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -384,8 +358,8 @@ Start第一篇就用来记">
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/08/19/Mac10-10-3-Hexo-Git部署静态博客/"
-                   data-title="Mac10.10.3+Hexo+Git部署静态博客" data-url="http://booshen.github.io/2015/08/19/Mac10-10-3-Hexo-Git部署静态博客/">
+              <div class="ds-thread" data-thread-key="2016/01/06/Mac下配置多个git帐号/"
+                   data-title="Mac下配置多个git帐号" data-url="http://booshen.github.io/2016/01/06/Mac下配置多个git帐号/">
               </div>
             
           </div>
@@ -484,7 +458,7 @@ Start第一篇就用来记">
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ice_Break"><span class="nav-number">1.</span> <span class="nav-text">Ice Break</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Start"><span class="nav-number">2.</span> <span class="nav-text">Start</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Procedure"><span class="nav-number">3.</span> <span class="nav-text">Procedure</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mac"><span class="nav-number">3.1.</span> <span class="nav-text">Mac</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Node"><span class="nav-number">3.2.</span> <span class="nav-text">Node</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo"><span class="nav-number">3.3.</span> <span class="nav-text">Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git"><span class="nav-number">3.4.</span> <span class="nav-text">Git</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Send_To_Git"><span class="nav-number">4.</span> <span class="nav-text">Send To Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题更换"><span class="nav-number">5.</span> <span class="nav-text">主题更换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#End"><span class="nav-number">6.</span> <span class="nav-text">End</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#需求"><span class="nav-number">1.</span> <span class="nav-text">需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始"><span class="nav-number">2.</span> <span class="nav-text">开始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#End"><span class="nav-number">3.</span> <span class="nav-text">End</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

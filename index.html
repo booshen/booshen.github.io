@@ -193,6 +193,197 @@
           
           
             
+              <a class="post-title-link" href="/2016/01/06/Mac下配置多个git帐号/" itemprop="url">
+                Mac下配置多个git帐号
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2016-01-06T10:11:12+08:00" content="2016-01-06">
+            2016-01-06
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/01/06/Mac下配置多个git帐号/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/06/Mac下配置多个git帐号/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h2 id="需求">需求</h2><p>公司开发的时候也大多都是gitlab了，简洁方便。</p>
+<p>但是自己的github也要使用，就会遇到多个git帐号配置的事情。</p>
+<blockquote>
+<p>王阳明说：圣人为镜，物来则照。</p>
+</blockquote>
+<p>遇到了就记录下来。方便自己，也希望能帮助他人。</p>
+<h2 id="开始">开始</h2><p>环境：</p>
+<blockquote>
+<p>Mac 10.11.2</p>
+</blockquote>
+<p>其实也就是生成多个ssh-key，然后让多个ssh-key同时生效即可。</p>
+<p>第一个ssh-key生成：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"username@gitlab.com"</span></span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/Users/xxx/.ssh/id_rsa):</span><br><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):</span><br><span class="line">Enter same passphrase again:</span><br><span class="line">Your identification has been saved <span class="keyword">in</span> /Users/xxx/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /Users/xxx/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">SHA256:****************************** xxx@gitlab.com</span><br><span class="line">The key<span class="string">'s randomart image is:</span><br><span class="line">+---[RSA 2048]----+</span><br><span class="line">|                 |</span><br><span class="line">|         *       |</span><br><span class="line">|        . o      |</span><br><span class="line">|         .  .    |</span><br><span class="line">|         a       |</span><br><span class="line">|           .     |</span><br><span class="line">|            +    |</span><br><span class="line">|           .     |</span><br><span class="line">|                 |</span><br><span class="line">+----[SHA256]-----+</span></span><br></pre></td></tr></table></figure>
+<p>一路回车即可搞定第一个，默认就会写到下面这个文件中。</p>
+<blockquote>
+<p>~/.ssh/is_rsa.pub</p>
+</blockquote>
+<p>第二个ssh-key生成：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"username@github.com"</span></span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/Users/xxx/.ssh/id_rsa): /Users/xxx/.ssh/id_rsa_github</span><br><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):</span><br><span class="line">Enter same passphrase again:</span><br><span class="line">Your identification has been saved <span class="keyword">in</span> /Users/xxx/.ssh/id_rsa_github.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /Users/xxx/.ssh/id_rsa_github.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">SHA256:******************************* xxx@github.com</span><br><span class="line">The key<span class="string">'s randomart image is:</span><br><span class="line">+---[RSA 2048]----+</span><br><span class="line">|        +        |</span><br><span class="line">|                 |</span><br><span class="line">|        . o      |</span><br><span class="line">|         .       |</span><br><span class="line">|        S        |</span><br><span class="line">|           .     |</span><br><span class="line">|            +    |</span><br><span class="line">|           .     |</span><br><span class="line">|            +    |</span><br><span class="line">+----[SHA256]-----+</span></span><br></pre></td></tr></table></figure>
+<p>第二个在生成的时候，只是输入了这个key需要保存的文件名。如果不写，就会默认询问是否覆盖第一个生成的rsa文件。</p>
+<p>在第二个文件生成好以后，需要将这个key添加给系统的ssh，这样系统才能识别。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-add /Users/xxx/.ssh/id_rsa_github</span><br></pre></td></tr></table></figure>
+<p>此时添加第二个key结束。来验证下吧。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>如果出现</p>
+<blockquote>
+<p>Hi lizhong! You’ve successfully authenticated…</p>
+</blockquote>
+<p>则说明已经可以成功连接到github了。</p>
+<h2 id="End">End</h2><blockquote>
+<p>The End!</p>
+</blockquote>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2016/01/06/CentOS安装PHP的PDO扩展/" itemprop="url">
+                CentOS安装PHP的PDO扩展
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2016-01-06T10:10:40+08:00" content="2016-01-06">
+            2016-01-06
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/01/06/CentOS安装PHP的PDO扩展/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/06/CentOS安装PHP的PDO扩展/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h2 id="需求">需求</h2><p>因为框架更改，从之前的Yaf更换到了Yii，之前休假一个月回去写论文，元旦后回公司第一件事情就是配置环境。</p>
+<p>Yii的需求是需要添加PDO扩展，我之前安装PHP是为了Yaf服务的，Yaf使用的是mysqli，所以PDO就没有安装。而这次安装还是遇到了一些小麻烦，在这里一并记录下来，以供以后翻阅。</p>
+<h2 id="开始">开始</h2><p>首先介绍下环境：</p>
+<blockquote>
+<p>Mac 10.11.2 + PHP5.6 + MySQL5.1.7</p>
+</blockquote>
+<p>编译安装PHP的时候，PHP源码包中有PDO扩展的源码，可以直接用这里的代码。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /pathto/php5.<span class="number">6</span>/ext/pdo/</span><br></pre></td></tr></table></figure>
+<p>如果PHP源码包没有了，可以去下载一个PDO的扩展源码包。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget http://pecl.php.net/get/PDO_MYSQL-<span class="number">1.0</span>.<span class="number">2</span>.tgz</span><br><span class="line">tar -zxvf PDO_MYSQL-<span class="number">1.0</span>.<span class="number">2</span>.tgz</span><br><span class="line"><span class="built_in">cd</span> PDO_MYSQL-<span class="number">1.0</span>.<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>下面的是共同的了：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/pathto_your_php_dir/bin/phpize</span><br><span class="line">./configure -with-php-config=/pathto_your_php_dir/bin/php-config</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<p>如果一切都顺利，先到对应的php扩展中查看extension的so文件是否已经生成，如果生成了pdo.so文件，接下来就进行php.ini的配置：</p>
+<p>在php.ini中添加pdo.so文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">extension=pdo.so</span><br></pre></td></tr></table></figure>
+<p>然后重启php，查看是否安装成功：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">killall php-fpm</span><br><span class="line">./pathto_php-fpm/php-fpm</span><br></pre></td></tr></table></figure>
+<p>查看扩展列表：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/pathto_your_php/bin/php -m</span><br></pre></td></tr></table></figure>
+<p>如果列表中出现了PDO，则扩展安装成功。</p>
+<h2 id="结束">结束</h2><blockquote>
+<p>Congratulations！</p>
+</blockquote>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/08/19/Mac-laravel安装笔记/" itemprop="url">
                 Mac+laravel安装笔记
               </a>
@@ -574,7 +765,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
